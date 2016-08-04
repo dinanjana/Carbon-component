@@ -1,9 +1,9 @@
 <serviceGroup>
-    <service name="StudentManager" scope="transportsession">
+    <service name="PingManager" scope="transportsession">
         <transports>
             <transport>https</transport>
         </transports>
-        <parameter name="ServiceClass">org.wso2.carbon.PingManager</parameter>
+        <parameter name="ServiceClass">org.wso2.carbon.pingReceiver.mgt.PingManager</parameter>
     </service>
 
     <parameter name="adminService" locked="true">true</parameter>

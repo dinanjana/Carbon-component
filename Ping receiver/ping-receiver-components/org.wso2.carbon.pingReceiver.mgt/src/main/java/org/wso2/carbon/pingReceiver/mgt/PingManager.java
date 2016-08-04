@@ -1,4 +1,4 @@
-package org.wso2.carbon;
+package org.wso2.carbon.pingReceiver.mgt;
 
 /**
  * Created by Dinanjana on 03/08/2016.
