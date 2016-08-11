@@ -16,6 +16,7 @@
         <module>org.wso2.carbon.pingReceiver.mgt</module>
         <!-- There are 2 more projects to be added here later in this tutorial stub, ui -->
         <module>org.wso2.carbon.pingReceiver.mgt.stub</module>
+        <module>../ping-receiver-components-slient</module>
     </modules>
 
     

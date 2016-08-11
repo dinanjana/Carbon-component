@@ -1,0 +1,132 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://mgt.pingReceiver.carbon.wso2.org" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://mgt.pingReceiver.carbon.wso2.org">
+   <wsdl:documentation>extractErrorLog</wsdl:documentation>
+   <wsdl:types>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://mgt.pingReceiver.carbon.wso2.org">
+         <xs:element name="getLogSnippetForDuration">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="time" nillable="true" type="xs:string"/>
+                  <xs:element minOccurs="0" name="duration" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getLogSnippetForDurationResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getLogSnippet">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="time" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getLogSnippetResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="getLogSnippetForDurationRequest">
+      <wsdl:part name="parameters" element="ns:getLogSnippetForDuration"/>
+   </wsdl:message>
+   <wsdl:message name="getLogSnippetForDurationResponse">
+      <wsdl:part name="parameters" element="ns:getLogSnippetForDurationResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getLogSnippetRequest">
+      <wsdl:part name="parameters" element="ns:getLogSnippet"/>
+   </wsdl:message>
+   <wsdl:message name="getLogSnippetResponse">
+      <wsdl:part name="parameters" element="ns:getLogSnippetResponse"/>
+   </wsdl:message>
+   <wsdl:portType name="extractErrorLogPortType">
+      <wsdl:operation name="getLogSnippetForDuration">
+         <wsdl:input message="ns:getLogSnippetForDurationRequest" wsaw:Action="urn:getLogSnippetForDuration"/>
+         <wsdl:output message="ns:getLogSnippetForDurationResponse" wsaw:Action="urn:getLogSnippetForDurationResponse"/>
+      </wsdl:operation>
+      <wsdl:operation name="getLogSnippet">
+         <wsdl:input message="ns:getLogSnippetRequest" wsaw:Action="urn:getLogSnippet"/>
+         <wsdl:output message="ns:getLogSnippetResponse" wsaw:Action="urn:getLogSnippetResponse"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="extractErrorLogSoap11Binding" type="ns:extractErrorLogPortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getLogSnippetForDuration">
+         <soap:operation soapAction="urn:getLogSnippetForDuration" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getLogSnippet">
+         <soap:operation soapAction="urn:getLogSnippet" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="extractErrorLogSoap12Binding" type="ns:extractErrorLogPortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getLogSnippetForDuration">
+         <soap12:operation soapAction="urn:getLogSnippetForDuration" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getLogSnippet">
+         <soap12:operation soapAction="urn:getLogSnippet" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="extractErrorLogHttpBinding" type="ns:extractErrorLogPortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="getLogSnippetForDuration">
+         <http:operation location="getLogSnippetForDuration"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getLogSnippet">
+         <http:operation location="getLogSnippet"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="extractErrorLog">
+      <wsdl:port name="extractErrorLogHttpsSoap11Endpoint" binding="ns:extractErrorLogSoap11Binding">
+         <soap:address location="https://DESKTOP-Q90AKCD:8243/services/extractErrorLog.extractErrorLogHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="extractErrorLogHttpsSoap12Endpoint" binding="ns:extractErrorLogSoap12Binding">
+         <soap12:address location="https://DESKTOP-Q90AKCD:8243/services/extractErrorLog.extractErrorLogHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="extractErrorLogHttpsEndpoint" binding="ns:extractErrorLogHttpBinding">
+         <http:address location="https://DESKTOP-Q90AKCD:8243/services/extractErrorLog.extractErrorLogHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

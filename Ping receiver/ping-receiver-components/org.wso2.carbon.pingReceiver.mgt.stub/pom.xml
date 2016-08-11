@@ -70,7 +70,7 @@
                                 </path>
                                 <java classname="org.apache.axis2.wsdl.WSDL2Java" fork="true">
                                     <classpath refid="wsdl2java.classpath" />
-                                    <arg line="-uri src/main/resources/PingManager.wsdl -u -uw
+                                    <arg line="-uri src/main/resources/extractErrorLog.wsdl -u -uw
                                      -o target/generated-code -p org.wso2.carbon.pingReceiver.mgt"/>
                                 </java>
                             </tasks>
